@@ -24,6 +24,8 @@ public class LoginPage {
 		driver.findElement(By.id("userName")).sendKeys("ravinderKumar");
 		driver.findElement(By.id("password")).sendKeys("Password@123456");
 		driver.findElement(By.id("login")).click();
+		
+		//Explicit Wait added
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("submit")));
 		
