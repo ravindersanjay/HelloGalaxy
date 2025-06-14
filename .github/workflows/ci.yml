@@ -27,7 +27,7 @@ jobs:
 
       - name: Set up ChromeDriver
   	uses: browser-actions/setup-chromedriver@v1
-
+ 
 
       - name: Run tests and generate Jacoco report
         run: mvn clean verify jacoco:report
