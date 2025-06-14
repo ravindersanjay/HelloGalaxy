@@ -17,7 +17,7 @@ public class LoginTest {
 	{
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--headless");
-		chromeOptions.addArguments("--start-maximized");
+		//chromeOptions.addArguments("--start-maximized");
 		WebDriver driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
