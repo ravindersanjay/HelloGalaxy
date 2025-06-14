@@ -18,10 +18,13 @@ public class LoginTest {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--headless");
 		//chromeOptions.addArguments("--start-maximized");
+	    chromeOptions.addArguments("--disable-gpu"); // Recommended for headless
+	    chromeOptions.addArguments("--window-size=1920,1080");
+		chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
 		WebDriver driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-		chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
 		driver.get("https://demoqa.com/login");
 		driver.findElement(By.id("userName")).sendKeys("ravinderKumar");
 		driver.findElement(By.id("password")).sendKeys("Password@123456");
