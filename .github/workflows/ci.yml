@@ -34,8 +34,8 @@ jobs:
 
 
     - name: Debug - List Jacoco Files
-    run: |
-    find target -type f | grep jacoco
+      run: |
+       find target -type f | grep jacoco
 
 
 
