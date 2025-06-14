@@ -20,13 +20,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-      - name: Set up ChromeDriver
-        uses: browser-actions/setup-chromedriver@v1
+      - name: Set up Chrome and ChromeDriver
+        uses: browser-actions/setup-chrome@latest
 
       - name: Run tests and generate Jacoco report
         run: mvn clean verify jacoco:report
