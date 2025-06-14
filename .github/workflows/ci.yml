@@ -29,14 +29,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven
 
-    - name: Build, Test, and Generate Site
+    - name: Build, Test, and Generate Coverage Report
       run: mvn clean verify site
-
-    - name: Run Unit Tests
-      run: mvn test
-
-    - name: Code Coverage with JaCoCo
-      run: mvn verify jacoco:report
 
     - name: Upload Coverage Report
       uses: actions/upload-artifact@v4
