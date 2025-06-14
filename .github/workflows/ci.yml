@@ -26,9 +26,8 @@ jobs:
           sudo apt-get install -y google-chrome-stable
 
       - name: Set up ChromeDriver
-        uses: nanasess/setup-chromedriver@v2
-        with:
-          chromedriver-version: 'latest'
+  	uses: browser-actions/setup-chromedriver@v1
+
 
       - name: Run tests and generate Jacoco report
         run: mvn clean verify jacoco:report
