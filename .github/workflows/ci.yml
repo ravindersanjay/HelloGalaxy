@@ -32,6 +32,13 @@ jobs:
     - name: Build, Test, and Generate Coverage Report
       run: mvn clean verify jacoco:report
 
+
+    - name: Debug - List Jacoco Files
+    run: |
+    find target -type f | grep jacoco
+
+
+
     - name: Upload Coverage Report
       uses: actions/upload-artifact@v4
       with:
